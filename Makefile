@@ -6,7 +6,7 @@
 #    By: yrodrigu <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 16:07:27 by yrodrigu          #+#    #+#              #
-#    Updated: 2024/08/01 18:03:57 by yrodrigu         ###   ########.fr        #
+#    Updated: 2024/08/03 13:38:16 by yrodrigu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,30 +23,24 @@
 # **************************************************************************** #
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-CFILES =
+CFILES = utilities.c\
+		 fractol.c\
 
 OFILES = $(CFILES:.c=.o)
 
-CLIENT_OFILES = client.o ft_utilities.o
-SERVER_OFILES = server.o ft_utilities.o
+all: fractol
 
-client: $(OFILES)
-		$(CC) $(CFLAGS) $(CLIENT_OFILES) -o client
+fractol: $(OFILES)
+		$(CC) $(CFLAGS) $(OFILES) -o fractol
 
-server: $(OFILES)
-		$(CC) $(CFLAGS) $(SERVER_OFILES) -o server
-
-%.o: %.c libft.h 
-		$(CC) $(CFLAGS) -c $<
-
-%bonus.o: %bonus.c  libft.h
+%.o: %.c fractol.h 
 		$(CC) $(CFLAGS) -c $<
 
 clean:
-		rm -f $(OFILES) $(BONUS_OFILES)
+		rm -f $(OFILES)
 
 fclean: clean
-		rm -f client server
+		rm -f fractol
 re: fclean all
 
 .PHONY: all bonus clean fclean re
