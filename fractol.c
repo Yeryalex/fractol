@@ -6,12 +6,13 @@
 /*   By: yrodrigu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 18:11:20 by yrodrigu          #+#    #+#             */
-/*   Updated: 2024/08/01 18:11:46 by yrodrigu         ###   ########.fr       */
+/*   Updated: 2024/08/03 13:25:56 by yrodrigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
 
 int	main()
 {
+	printf(ERROR_MESSAGE);
 	return (0);
 }
