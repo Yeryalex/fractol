@@ -6,7 +6,7 @@
 /*   By: yrodrigu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 18:10:03 by yrodrigu          #+#    #+#             */
-/*   Updated: 2024/08/06 17:15:03 by yrodrigu         ###   ########.fr       */
+/*   Updated: 2024/08/06 17:20:33 by yrodrigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <math.h>
+# include "minilibx-linux/mlx.h"
 
 #define ERROR_MESSAGE "=====================================\n\t\tUsage:\n"
 #define ERROR_MESSAGE2 "=====================================\n1) ./fractol "
