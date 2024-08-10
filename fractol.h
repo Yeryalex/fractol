@@ -6,7 +6,7 @@
 /*   By: yrodrigu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 18:10:03 by yrodrigu          #+#    #+#             */
-/*   Updated: 2024/08/10 20:41:39 by yrodrigu         ###   ########.fr       */
+/*   Updated: 2024/08/10 21:22:09 by yrodrigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,13 @@ typedef struct s_fractal
 	void	*mlx_connection;
 	void	*mlx_window;
 	t_img	img;
-	double  scape_value;
-	int     iterations_definition;
-    double  shift_x;
-    double  shift_y;
-    double  zoom;
-    double  julia_x;
-    double  julia_y;
-
+	double	scape_value;
+	int		iterations_definition;
+	double	shift_x;
+	double	shift_y;
+	double	zoom;
+	double	julia_x;
+	double	julia_y;
 }			t_fractal;
 
 typedef struct s_complex
@@ -83,5 +82,6 @@ int			key_handler(int keysym, t_fractal *fractal);
 int			close_handler(t_fractal *fractal);
 int			mouse_handler(int button, int x, int y, t_fractal *fractal);
 int			julia_track(int x, int y, t_fractal *fractal);
+int			is_numeric(char *str);
 
 #endif

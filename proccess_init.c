@@ -6,7 +6,7 @@
 /*   By: yrodrigu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 19:45:30 by yrodrigu          #+#    #+#             */
-/*   Updated: 2024/08/10 20:41:56 by yrodrigu         ###   ########.fr       */
+/*   Updated: 2024/08/10 21:29:29 by yrodrigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
@@ -21,7 +21,7 @@ static void	data_init(t_fractal *fractal)
 {
 	fractal->scape_value = 4;
 	fractal->iterations_definition = 42;
-	fractal->shift_x = 0.0;
+	fractal->shift_x = -0.5;
 	fractal->shift_y = 0.0;
 	fractal->zoom = 1.0;
 }

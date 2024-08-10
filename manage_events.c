@@ -6,7 +6,7 @@
 /*   By: yrodrigu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 19:03:50 by yrodrigu          #+#    #+#             */
-/*   Updated: 2024/08/10 20:53:49 by yrodrigu         ###   ########.fr       */
+/*   Updated: 2024/08/10 21:02:32 by yrodrigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
@@ -29,9 +29,9 @@ int	key_handler(int keysym, t_fractal *fractal)
 	else if (keysym == XK_Right)
 		fractal->shift_x -= (0.5 * fractal->zoom);
 	else if (keysym == XK_Up)
-		fractal->shift_y += (0.5 * fractal->zoom);
-	else if (keysym == XK_Down)
 		fractal->shift_y -= (0.5 * fractal->zoom);
+	else if (keysym == XK_Down)
+		fractal->shift_y += (0.5 * fractal->zoom);
 	else if (keysym == XK_plus)
 		fractal->iterations_definition += 10;
 	else if (keysym == XK_minus)
