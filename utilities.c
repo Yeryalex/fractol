@@ -6,7 +6,7 @@
 /*   By: yrodrigu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 13:32:36 by yrodrigu          #+#    #+#             */
-/*   Updated: 2024/08/10 21:15:07 by yrodrigu         ###   ########.fr       */
+/*   Updated: 2024/08/10 21:43:33 by yrodrigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
@@ -18,11 +18,11 @@ int	is_numeric(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (!(str[i] >= 48 && str[i] <= 57))
-			return (1);
+		if (!(str[i] == '.') || !(str[i] >= 48 && str[i] <= 57))
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
@@ -61,6 +61,8 @@ double	atodbl(char *s)
 	double	decimal;
 	int		sign;
 
+	num_error(s);
+	num_error(s);
 	integer_part = 0;
 	fractional_part = 0;
 	sign = 1;

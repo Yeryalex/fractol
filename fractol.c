@@ -6,14 +6,14 @@
 /*   By: yrodrigu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 18:11:20 by yrodrigu          #+#    #+#             */
-/*   Updated: 2024/08/10 21:26:45 by yrodrigu         ###   ########.fr       */
+/*   Updated: 2024/08/10 21:41:05 by yrodrigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
 
-static void	num_error(char **argv)
+void	num_error(char *s)
 {
-	if (is_numeric(argv[2]) || is_numeric(argv[3]))
+	if (is_numeric(s))
 	{
 		ft_putstr_fd("\033[96mPlease, enter only\033[0m", 1);
 		ft_putstr_fd("\033[96m numeric values!!!\n\033[0m", 1);
@@ -31,7 +31,6 @@ int	main(int argc, char **argv)
 		fractal.name = argv[1];
 		if (!ft_strncmp(fractal.name, "julia", 5))
 		{
-			num_error(argv);
 			fractal.julia_x = atodbl(argv[2]);
 			fractal.julia_y = atodbl(argv[3]);
 		}

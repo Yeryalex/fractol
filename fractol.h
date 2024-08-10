@@ -6,7 +6,7 @@
 /*   By: yrodrigu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 18:10:03 by yrodrigu          #+#    #+#             */
-/*   Updated: 2024/08/10 21:22:09 by yrodrigu         ###   ########.fr       */
+/*   Updated: 2024/08/10 21:40:09 by yrodrigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,6 @@ int			close_handler(t_fractal *fractal);
 int			mouse_handler(int button, int x, int y, t_fractal *fractal);
 int			julia_track(int x, int y, t_fractal *fractal);
 int			is_numeric(char *str);
+void		num_error(char *s);
 
 #endif
