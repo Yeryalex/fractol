@@ -6,7 +6,7 @@
 /*   By: yrodrigu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 18:18:47 by yrodrigu          #+#    #+#             */
-/*   Updated: 2024/08/10 18:17:27 by yrodrigu         ###   ########.fr       */
+/*   Updated: 2024/08/10 19:26:38 by yrodrigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
@@ -42,7 +42,7 @@ static void	handle_pixel(int x, int y, t_fractal *fractal)
 
 	i = 0;
 	z.x = (map(x, -2, 2, 0, WIDTH) * fractal->zoom) + fractal->shift_x;
-	z.y = (map(x, -2, 2, 0, HEIGHT) * fractal->zoom) + fractal->shift_y;
+	z.y = (map(y, 2, -2, 0, HEIGHT) * fractal->zoom) + fractal->shift_y;
 	mandel_vs_julia(&z, &c, fractal);
 	while (i < fractal->iteration_definition)
 	{
