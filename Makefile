@@ -6,7 +6,7 @@
 #    By: yrodrigu <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 16:07:27 by yrodrigu          #+#    #+#              #
-#    Updated: 2024/08/06 17:32:28 by yrodrigu         ###   ########.fr        #
+#    Updated: 2024/08/07 17:06:12 by yrodrigu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 CFILES = utilities.c\
          fractol.c\
+		 init.c\
 
 OFILES = $(CFILES:.c=.o)
 

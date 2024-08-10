@@ -6,7 +6,7 @@
 /*   By: yrodrigu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 13:32:36 by yrodrigu          #+#    #+#             */
-/*   Updated: 2024/08/06 17:09:20 by yrodrigu         ###   ########.fr       */
+/*   Updated: 2024/08/10 18:37:56 by yrodrigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
@@ -39,3 +39,32 @@ void	ft_putstr_fd(char *str, int fd)
 		str++;
 	}
 }
+
+double	atodbl(char *s)
+{
+	long	integer_part;
+	double	fractional_part;
+	double	decimal;
+	int		sign;
+
+	integer_part = 0;
+	fractional_part = 0;
+	sign = 1;
+	decimal = 1;
+	while ((*s >= 9 && *s <= 13) || *s == 32)
+		s++;
+	while (*s == '+' || *s == '-')
+		if (*s++ == '-')
+			sign = -sign;
+	while (*s != '.' && *s)
+		integer_part = (integer_part * 10) + (*s++ - 48);
+	if (*s == '.')
+		s++;
+	while (*s)
+	{
+		decimal /= 10;
+		fractional_part = fractional_part + (*s++ - 48) * decimal;
+	}
+	return ((integer_part + fractional_part) * sign);
+}
+
