@@ -6,17 +6,17 @@
 /*   By: yrodrigu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 18:18:47 by yrodrigu          #+#    #+#             */
-/*   Updated: 2024/08/10 19:26:38 by yrodrigu         ###   ########.fr       */
+/*   Updated: 2024/08/10 20:45:45 by yrodrigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
 
 static void	my_pixel_put(int x, int y, t_img *img, int color)
 {
-	int offset;
+	int	offset;
 
 	offset = (y * img->line_len) + (x * (img->bpp / 8));
-	*(unsigned int)(img->pixel_ptr + offset) = color;
+	*(unsigned int *)(img->pixel_ptr + offset) = color;
 }
 
 static void	mandel_vs_julia(t_complex *z, t_complex *c, t_fractal *fractal)
@@ -41,15 +41,15 @@ static void	handle_pixel(int x, int y, t_fractal *fractal)
 	int			color;
 
 	i = 0;
-	z.x = (map(x, -2, 2, 0, WIDTH) * fractal->zoom) + fractal->shift_x;
-	z.y = (map(y, 2, -2, 0, HEIGHT) * fractal->zoom) + fractal->shift_y;
+	z.x = (map(x, -2, 2, WIDTH) * fractal->zoom) + fractal->shift_x;
+	z.y = (map(y, 2, -2, HEIGHT) * fractal->zoom) + fractal->shift_y;
 	mandel_vs_julia(&z, &c, fractal);
-	while (i < fractal->iteration_definition)
+	while (i < fractal->iterations_definition)
 	{
 		z = sum_complex(square_complex(z), c);
 		if ((z.x * z.x) + (z.y * z.y) > fractal->scape_value)
 		{
-			color = map(i, BLACK, WHITE, 0, fractal->iterations_definition);
+			color = map(i, BLACK, WHITE, fractal->iterations_definition);
 			my_pixel_put(x, y, &fractal->img, color);
 			return ;
 		}
@@ -66,14 +66,14 @@ void	fractal_render(t_fractal *fractal)
 	y = -1;
 	while (++y < HEIGHT)
 	{
-		x= -1;
+		x = -1;
 		while (++x < WIDTH)
 		{
 			handle_pixel(x, y, fractal);
 		}
 	}
 	mlx_put_image_to_window(fractal->mlx_connection,
-							fracta;->mlx_window,
-							fractal->img.img_ptr,
-							0, 0);
+		fractal->mlx_window,
+		fractal->img.img_ptr,
+		0, 0);
 }

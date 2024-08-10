@@ -6,7 +6,7 @@
 /*   By: yrodrigu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 18:11:20 by yrodrigu          #+#    #+#             */
-/*   Updated: 2024/08/10 17:54:15 by yrodrigu         ###   ########.fr       */
+/*   Updated: 2024/08/10 20:54:35 by yrodrigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
@@ -33,6 +33,7 @@ int	main(int argc, char **argv)
 		ft_putstr_fd(ERROR_MESSAGE, 1);
 		ft_putstr_fd(ERROR_MESSAGE2, 1);
 		ft_putstr_fd(ERROR_MESSAGE3, 1);
+		ft_putstr_fd(ERROR_MESSAGE4, 1);
 		exit(1);
 	}
 	return (0);

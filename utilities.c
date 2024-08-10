@@ -6,7 +6,7 @@
 /*   By: yrodrigu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 13:32:36 by yrodrigu          #+#    #+#             */
-/*   Updated: 2024/08/10 18:37:56 by yrodrigu         ###   ########.fr       */
+/*   Updated: 2024/08/10 20:35:25 by yrodrigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
@@ -67,4 +67,3 @@ double	atodbl(char *s)
 	}
 	return ((integer_part + fractional_part) * sign);
 }
-
