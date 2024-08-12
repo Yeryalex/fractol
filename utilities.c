@@ -6,19 +6,20 @@
 /*   By: yrodrigu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 13:32:36 by yrodrigu          #+#    #+#             */
-/*   Updated: 2024/08/11 12:22:09 by yrodrigu         ###   ########.fr       */
+/*   Updated: 2024/08/11 13:51:42 by yrodrigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
 
 int	is_numeric(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		if (!(str[i] == '.') && !(str[i] == '-') && !(str[i] == '+') && !(str[i] >= 48 && str[i] <= 57))
+		if (!(str[i] == '.') && !(str[i] == '-')
+			&& !(str[i] == '+') && !(str[i] >= 48 && str[i] <= 57))
 			return (1);
 		i++;
 	}
@@ -61,7 +62,6 @@ double	atodbl(char *s)
 	double	decimal;
 	int		sign;
 
-	num_error(s);
 	num_error(s);
 	integer_part = 0;
 	fractional_part = 0;

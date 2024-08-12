@@ -6,7 +6,7 @@
 /*   By: yrodrigu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 18:10:03 by yrodrigu          #+#    #+#             */
-/*   Updated: 2024/08/10 21:40:09 by yrodrigu         ###   ########.fr       */
+/*   Updated: 2024/08/11 13:14:17 by yrodrigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,7 @@
 # define RED         0xFF0000
 # define GREEN       0x00FF00
 # define BLUE        0x0000FF
-# define MAGENTA_BURST   0xFF00FF
-# define LIME_SHOCK      0xCCFF00
-# define NEON_ORANGE     0xFF6600
-# define PSYCHEDELIC_PURPLE 0x660066
+# define GRAY		 0xD3D3D3
 
 typedef struct s_img
 {
